@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Login Page</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#667eea,#764ba2);
+      overflow:hidden;
+    }
+
+    .background{
+      position:absolute;
+      width:100%;
+      height:100%;
+      overflow:hidden;
+      z-index:-1;
+    }
+
+    .circle{
+      position:absolute;
+      border-radius:50%;
+      background:rgba(255,255,255,0.08);
+      animation:float 8s infinite ease-in-out;
+    }
+
+    .circle:nth-child(1){
+      width:220px;
+      height:220px;
+      top:10%;
+      left:15%;
+    }
+
+    .circle:nth-child(2){
+      width:300px;
+      height:300px;
+      bottom:10%;
+      right:10%;
+      animation-duration:10s;
+    }
+
+    .circle:nth-child(3){
+      width:150px;
+      height:150px;
+      top:60%;
+      left:5%;
+      animation-duration:6s;
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-20px);
+      }
+    }
+
+    .login-container{
+      width:380px;
+      background:rgba(255,255,255,0.12);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,0.2);
+      border-radius:20px;
+      padding:40px;
+      box-shadow:0 8px 32px rgba(0,0,0,0.2);
+      color:white;
+    }
+
+    .login-container h2{
+      text-align:center;
+      margin-bottom:10px;
+      font-size:32px;
+      font-weight:600;
+    }
+
+    .login-container p{
+      text-align:center;
+      margin-bottom:30px;
+      font-size:14px;
+      opacity:0.8;
+    }
+
+    .input-box{
+      position:relative;
+      margin-bottom:25px;
+    }
+
+    .input-box input{
+      width:100%;
+      padding:14px 16px;
+      border:none;
+      outline:none;
+      border-radius:12px;
+      background:rgba(255,255,255,0.15);
+      color:white;
+      font-size:15px;
+      transition:0.3s;
+    }
+
+    .input-box input::placeholder{
+      color:#ddd;
+    }
+
+    .input-box input:focus{
+      background:rgba(255,255,255,0.22);
+      box-shadow:0 0 10px rgba(255,255,255,0.2);
+    }
+
+    .options{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+      font-size:14px;
+    }
+
+    .options a{
+      color:#fff;
+      text-decoration:none;
+      opacity:0.8;
+    }
+
+    .options a:hover{
+      opacity:1;
+      text-decoration:underline;
+    }
+
+    .login-btn{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:12px;
+      background:white;
+      color:#5a4fcf;
+      font-size:16px;
+      font-weight:600;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .login-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .divider{
+      text-align:center;
+      margin:25px 0;
+      font-size:14px;
+      opacity:0.8;
+    }
+
+    .social-login{
+      display:flex;
+      gap:12px;
+    }
+
+    .social-btn{
+      flex:1;
+      padding:12px;
+      border:none;
+      border-radius:10px;
+      background:rgba(255,255,255,0.15);
+      color:white;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .social-btn:hover{
+      background:rgba(255,255,255,0.25);
+    }
+
+    .signup{
+      text-align:center;
+      margin-top:20px;
+      font-size:14px;
+    }
+
+    .signup a{
+      color:#fff;
+      font-weight:600;
+      text-decoration:none;
+    }
+
+    .signup a:hover{
+      text-decoration:underline;
+    }
+
+    @media(max-width:450px){
+      .login-container{
+        width:90%;
+        padding:30px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="background">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+
+  <div class="login-container">
+    <h2>Agriculture project</h2>
+    <p>Login to continue to your dashboard</p>
+
+    <form>
+      <div class="input-box">
+        <input type="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="input-box">
+        <input type="password" placeholder="Password" required>
+      </div>
+
+      <div class="options">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="#">Forgot Password?</a>
+      </div>
+
+      <button type="submit" class="login-btn">Login</button>
+
+      <div class="divider">or continue with</div>
+
+      <div class="social-login">
+        <button type="button" class="social-btn">Google</button>
+        <button type="button" class="social-btn">GitHub</button>
+      </div>
+
+      <div class="signup">
+        Don't have an account?
+        <a href="#">Sign Up</a>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
